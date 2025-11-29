@@ -4,7 +4,6 @@ import FileUpload from '~/components/fileUpload.vue';
 </script>
 
 <template>
-<<<<<<< Updated upstream
   <div class="min-h-screen bg-zinc-300 dark:bg-slate-800 flex flex-col">
 
     <header class="w-full py-4 px-6 flex justify-between items-center">
@@ -43,9 +42,3 @@ import FileUpload from '~/components/fileUpload.vue';
 <script setup lang="ts">
 import { Button } from "@/components/ui/button";
 </script>
-=======
-    <h1 class="bg-red-500">Welcome to Dropadox</h1>
-    <div></div>
-    <FileUpload />
-</template>
->>>>>>> Stashed changes
