@@ -15,9 +15,9 @@
       © 2025 Dropadox — Simple, secure file sharing
     </footer>
 
-  </div>
+    <FileUpload />
 
-  <FileUpload />
+  </div>
 </template>
 <script setup lang="ts">
 import { Button } from "@/components/ui/button";
