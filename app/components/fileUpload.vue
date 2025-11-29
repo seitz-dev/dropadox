@@ -10,7 +10,7 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import { ref } from "vue";
 
 
@@ -19,15 +19,17 @@ const response = ref(null);
 const error = ref(null);
 
 function onFileChange(e){
-    file.value = e.target.file[0];
+    console.log("CLIENT FILE:", file.value);
+    file.value = e.target.files[0];
     response.value = null;
-    error = null;
+    error.value = null;
 }
 
 async function upload() {
   try {
     const form = new FormData();
     form.append("file", file.value); // MUST be "file"
+    console.log("FILE BEING SENT:", file.value);
 
     const res = await fetch("/api/upload", {
       method: "POST",
