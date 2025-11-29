@@ -1,21 +1,84 @@
 <template>
+  <div class="min-h-screen bg-zinc-300 dark:bg-slate-800 flex flex-col">
 
-  <h1>Welcome to Dropadox</h1>
-  <h2>Sign up Now</h2>
-    <div class="signup flex">
-      <p v-if="submissionError">{{submissionError}}</p>
+    <header class="w-full py-4 px-6 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-black">Dropadox</h1>
+      <div>
+        <NuxtLink to="/signup">
+          <Button variant="outline" class="m-2 border-black text-black hover:bg-black/20">
+            Sign up
+          </Button>
+        </NuxtLink>
+        <NuxtLink to="/login">
+          <Button variant="outline" class="m-2 border-black text-black hover:bg-black/20">
+            Login
+          </Button>
+        </NuxtLink>
+      </div>
+    </header>
 
-      <input v-model="state.name" placeholder="Name" required />
-      <p v-if="nameError">{{nameError}}</p>
-      <input v-model="state.email" placeholder="email"/>
-      <p v-if="emailError">{{ emailError }}</p>
-      <input v-model="state.password" placeholder="password"/>
-      <p v-if="passwordError">{{ passwordError }}</p>
-      <button @click="signUp">Sign Up</button>
-    </div>
+    <main class="flex flex-col items-center justify-center flex-1 px-6 text-center">
 
+      <h2 class="text-4xl font-extrabold text-black drop-shadow-md mb-6">
+        Create Your Account
+      </h2>
+
+      <div class="w-full max-w-sm bg-white/60 dark:bg-slate-700/50 p-6 rounded-xl shadow-md backdrop-blur">
+
+        <p v-if="submissionError" class="text-red-500 font-medium mb-2">
+          {{ submissionError }}
+        </p>
+
+        <div class="flex flex-col space-y-4">
+
+          <div class="text-left">
+            <input
+                v-model="state.name"
+                placeholder="Name"
+                class="w-full p-3 rounded-md border border-black/30 bg-white focus:outline-none focus:ring-2 focus:ring-black"
+                required
+            />
+            <p v-if="nameError" class="text-red-500 text-sm mt-1">{{ nameError }}</p>
+          </div>
+
+          <div class="text-left">
+            <input
+                v-model="state.email"
+                placeholder="Email"
+                class="w-full p-3 rounded-md border border-black/30 bg-white focus:outline-none focus:ring-2 focus:ring-black"
+            />
+            <p v-if="emailError" class="text-red-500 text-sm mt-1">{{ emailError }}</p>
+          </div>
+
+          <div class="text-left">
+            <input
+                v-model="state.password"
+                type="password"
+                placeholder="Password"
+                class="w-full p-3 rounded-md border border-black/30 bg-white focus:outline-none focus:ring-2 focus:ring-black"
+            />
+            <p v-if="passwordError" class="text-red-500 text-sm mt-1">{{ passwordError }}</p>
+          </div>
+
+          <Button
+              @click="signUp"
+              class="w-full bg-black text-white hover:bg-black/80 mt-2 py-3 rounded-xl"
+          >
+            Sign Up
+          </Button>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="text-center py-6 text-black/80 text-sm">
+      © 2025 Dropadox — Simple, secure file sharing
+    </footer>
+
+  </div>
 </template>
 <script lang="ts" setup>
+import { Button } from "@/components/ui/button";
   const state = reactive({
     name: '',
     email: '',

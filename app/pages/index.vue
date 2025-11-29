@@ -27,7 +27,6 @@
       </p>
     </main>
 
-    <!-- FOOTER -->
     <footer class="text-center py-6 text-black/80 text-sm">
       © 2025 Dropadox — Simple, secure file sharing
     </footer>
