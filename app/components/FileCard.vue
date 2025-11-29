@@ -9,13 +9,13 @@
 
             <div class="flex gap-4">
 
-                <NuxtLink :to="`/view/${props.fileId}`">
-                    <div class="ml-auto text-sm text-neutral-500">
-                        <View />
+                <NuxtLink :to="`/view/${props.fileId}`" class="cursor-pointer">
+                    <div class="ml-auto text-sm">
+                        <Eye />
                     </div>
                 </NuxtLink>
 
-                <button @click="download">
+                <button @click="download" class="cursor-pointer">
                     <Download />
                 </button>
             </div>
@@ -24,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import { File, View, Download } from 'lucide-vue-next';
+import { File, View, Download, Eye } from 'lucide-vue-next';
 
 const props = defineProps<{ fileId: number; fileName: string }>();
 
