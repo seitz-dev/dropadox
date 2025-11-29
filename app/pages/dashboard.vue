@@ -27,9 +27,9 @@
 
       <div class="flex-1 flex flex-col w-full">
 
-        <header class="p-4 border-b flex items-center gap-4 bg-black">
+        <header class="p-4 border-b flex items-center gap-4">
           <div class="flex-1">
-            <Input placeholder="Search files…" class="text-zinc-300 border-zinc-300 focus-visible:ring-zinc-300" />
+            <Input placeholder="Search files…" class="text-zinc-300 border-zinc-300 bg-white focus-visible:ring-zinc-300" />
           </div>
 
           <DropdownMenu>
@@ -64,7 +64,6 @@
 <script setup lang="ts">
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger, DropdownMenuItem } from "@/components/ui/dropdown-menu";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, } from "@/components/ui/dialog"
 //icons
