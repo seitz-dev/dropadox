@@ -1,4 +1,4 @@
-import jwt from 'jsonwebtoken';
+import jwt, { JwtPayload } from 'jsonwebtoken';
 
 export default defineEventHandler(async (event) => {
     const body = await readBody(event);
@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
         })
     }
 
-    const payload = jwt.verify(String(token), process.env.JSON_SECRET_KEY!);
+    const payload = jwt.verify(String(token), process.env.JSON_SECRET_KEY!) as JwtPayload;
 
-    if
+    return payload
 }); 

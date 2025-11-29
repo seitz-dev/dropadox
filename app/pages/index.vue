@@ -37,13 +37,3 @@
 <script setup lang="ts">
 import { Button } from "@/components/ui/button";
 </script>
-<template>
-    <h1 class="m-3 p-3 bg--300 rounded-md font-bold">Welcome to Dropadox</h1>
-    <div>
-        
-    </div>
-</template>
-
-<script setup lang="ts">
-import { Button } from "@/components/ui/button";
-</script>
