@@ -92,7 +92,7 @@
 
         token.value = res.token
 
-        await router.push('/')
+        await router.push('/dashboard')
 
       } catch (err: any) {
         submissionError.value = err.statusText;

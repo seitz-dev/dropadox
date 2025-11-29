@@ -27,7 +27,7 @@
   async function logoff() {
     if (isLoggedIn) {
       isLoggedIn.value = null;
-      router.push('/signup')
+      router.push('/')
     }
   }
 </script>
