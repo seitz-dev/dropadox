@@ -53,7 +53,7 @@ export default defineEventHandler(async (event) => {
             statusText: "Password is not correct."
         })
     }
-
+ 
     const token = jwt.sign({
         username: user.name,
         emailAddress: user.email
