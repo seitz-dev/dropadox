@@ -83,7 +83,7 @@ const {t} = useI18n();
           emailError.value = t("signIn.validation.validEmail");
       }
       if (state.password.length < 6) {
-        passwordError.value = t("signIn.validation.passwordRequired");
+        passwordError.value = t("signUp.validation.passwordRequired");
       }
       if (state.name.length < 1) {
         nameError.value = t("signUp.validation.nameRequired");
