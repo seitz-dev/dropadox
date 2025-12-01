@@ -55,13 +55,10 @@ async function upload() {
 
 
     response.value = await res.json();
+    
+    
     if (!res.ok) {
-      error.value = data?.statusMessage || "Upload failed";
-      response.value = null;
-      return;
-    }
-    if (!res.ok) {
-      if (data?.statusMessage === "MAXIMUM_STORAGE_REACHED") {
+      if (res.statusText === "MAXIMUM_STORAGE_REACHED") {
         error.value = "You have reached your maximum storage capacity";
       } else {
         error.value = data?.statusMessage || "Upload failed";
