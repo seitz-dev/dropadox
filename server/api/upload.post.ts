@@ -46,9 +46,7 @@ export default defineEventHandler(async (event) => {
     
     const userPayload = jwt.verify(token, process.env.JSON_SECRET_KEY!) as UserPayload;
 
-    console.log(`MAX_BYTES:${MAX_BYTES}`);
-    console.log(`userid:${userPayload.id}`)
-    console.log(`getUserStorageBytes:${await getUserStorageBytes(String(userPayload.id))}`);
+    //limits users file storage capacity
     if (await getUserStorageBytes(String(userPayload.id)) >= MAX_BYTES){
         console.log("storage capacity reached");
         throw createError({
