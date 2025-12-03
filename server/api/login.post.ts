@@ -49,7 +49,7 @@ export default defineEventHandler(async (event) => {
     const verificiation = await bcrypt.compare(String(password), user.password ?? '')
     if (!verificiation) {
         throw createError({
-            status: 400,
+            status: 401,
             statusText: "Password is not correct."
         })
     }
