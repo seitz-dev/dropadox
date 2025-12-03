@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import { uploads } from '~~/server/database/schema';
 import { eq } from 'drizzle-orm';
-import { getUserFromPayload, getUserPayload } from '~~/server/utils/getUser';
+import { getUserFromPayload, getUserPayloadFromToken } from '~~/server/utils/getUser';
 
 export default defineEventHandler(async (event) => {
     const body = await readBody(event);
@@ -15,7 +15,7 @@ export default defineEventHandler(async (event) => {
         })
     }
 
-    const userPayload = getUserPayload(token);
+    const userPayload = getUserPayloadFromToken(token);
     const user = await getUserFromPayload(userPayload);
 
     if (!user) {

@@ -2,9 +2,8 @@ import jwt from 'jsonwebtoken';
 import { UserPayload } from '~~/shared/types/UserPayload';
 import { users } from '../database/schema';
 import { eq } from 'drizzle-orm';
-import { User } from './useDrizzle';
 
-export function getUserPayload(token: string): UserPayload {
+export function getUserPayloadFromToken(token: string): UserPayload {
     const userPayload = jwt.verify(token, process.env.JSON_SECRET_KEY!);
 
     return userPayload as UserPayload;

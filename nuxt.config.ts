@@ -2,7 +2,7 @@ import tailwindcss from "@tailwindcss/vite"
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['shadcn-nuxt', '@nuxtjs/i18n'],
+  modules: ['shadcn-nuxt', '@nuxtjs/i18n', '@nuxt/test-utils/module'],
   shadcn: {
     prefix: '',
     componentDir: '@/components/ui'
@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     defaultLocale: 'en'
   },
   compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   css: ["~/assets/css/main.css"],
   vite: {
     plugins: [

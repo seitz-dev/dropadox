@@ -13,7 +13,6 @@
 <script lang="ts" setup>
 import { ref, computed } from 'vue';
 import DashboardSidebar from "@/components/DashboardSidebar.vue"; // make sure to import it
-import { getFileName } from '../../shared/utils/getFileName';
 
 const {t} = useI18n();
 

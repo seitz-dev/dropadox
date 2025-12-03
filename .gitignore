@@ -28,3 +28,4 @@ public/uploads/*
 package-lock.json
 
 local.db
+test_database.db
